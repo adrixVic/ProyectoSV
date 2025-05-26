@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black;
+    position: relative;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #a3633a;
+    padding: 10px;
+    max-height: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 7px 0 0 30px;
+    color: #ece5e5;
+    font-size: 40px;
+}
+
+.logo-img img {
+    width: 100px;
+    height: 70px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 40px;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    font-size: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f7f7f7;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #843e15;
+    box-shadow: 0 5px 7px rgb(212, 176, 153);
+}
+
+nav ul li a:active {
+    background-color: #b78c8c;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: #a3633a;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 16px;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.search-button:hover {
+    background-color: #843e15;
+    box-shadow: 0 5px 7px rgb(212, 176, 153);
+}
+
+
+.eventos {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.eventos h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: black;
+}
+
+.evento {
+    background-color: #f9ca94;
+    border: 1px solid #050404;
+    border-radius: 10px;
+    margin: 30px 0;
+    padding: 20px;
+    box-shadow: 0 8px 8px rgb(0, 0, 0);
+    transition: transform 0.3s ease;
+}
+
+.evento:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.evento-info {
+    padding: 15px;
+}
+
+.evento h3 {
+    font-size: 1.8rem;
+    color: #442919;
+    margin-bottom: 10px;
+}
+
+.evento-fecha,
+.evento-hora {
+    font-size: 26px;
+    color: #0e0b0b;
+    margin-bottom: 8px;
+}
+
+.evento-descripcion {
+    font-size: 1.1rem;
+    color: black;
+}
+
+.fondo-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8d3d3;
+    position: relative;
+    bottom: 0;
+}
