@@ -93,7 +93,6 @@ nav ul li a:active {
     box-shadow: 0 5px 7px rgb(212, 176, 153);
 }
 
-
 .container-main {
     display: grid;
     gap: 20px;
@@ -150,6 +149,7 @@ nav ul li a:active {
     background-color: #843e15;
     color: white;
 }
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -158,16 +158,13 @@ nav ul li a:active {
     padding: 20px;
     max-width: 400px;
     margin: 30px auto;
-
 }
-
 
 .form-container h2 {
     font-size: 36px;
     color: black;
     margin-bottom: 20px;
 }
-
 
 form input {
     width: 100%;
@@ -179,7 +176,6 @@ form input {
     color: #333;
     transition: border-color 0.3s ease;
 }
-
 
 form input:focus {
     border-color: #a3633a;
@@ -212,18 +208,15 @@ form button:hover {
     color: black;
 }
 
-
 .register-link a {
     color: white;
-    text-decoration:solid black;
+    text-decoration: solid black;
     font-weight: bold;
 }
 
 .register-link a:hover {
     text-decoration: underline;
 }
-
-
 
 .fondo-video {
     position: absolute;
@@ -243,3 +236,105 @@ footer {
     position: relative;
     bottom: 0;
 }
+
+/* Responsive adjustments */
+
+@media (max-width: 1024px) {
+    .container-main {
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+    }
+    .banner .vid-der {
+        height: 350px;
+    }
+    .banner h3 {
+        font-size: 20px;
+    }
+    .form-container {
+        max-width: 350px;
+    }
+    .form-container h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 5%;
+        max-height: none;
+    }
+    .logo h1 {
+        font-size: 28px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    .logo-img img {
+        width: 80px;
+        height: 55px;
+    }
+    nav ul {
+        padding-left: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 8px 10px;
+        font-size: 1.1rem;
+    }
+    .search {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+    .search input {
+        width: 70%;
+        font-size: 1rem;
+        padding: 8px;
+    }
+    .search-button {
+        padding: 8px 14px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    .container-main {
+        grid-template-columns: 1fr;
+        width: 90%;
+        gap: 15px;
+    }
+    .banner .vid-der {
+        height: 300px;
+        border-radius: 25px;
+    }
+    .banner .button {
+        font-size: 20px;
+        padding: 15px;
+    }
+    .form-container {
+        max-width: 100%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+    .form-container h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 22px;
+        margin-left: 5px;
+    }
+    .logo-img img {
+        width: 60px;
+        height: 45px;
+    }
+    nav ul li {
+        margin: 6px 6px;
+        font-size: 1rem;
+    }
+    .search input {
+        width: 60%;
+        font-size: 0.9rem;
+    }
+    .search

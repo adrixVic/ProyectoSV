@@ -1,254 +1,390 @@
+:root {
+  --cafe-oscuro: #a3633a;
+  --cafe-claro: #843e15;
+  --texto-claro: #f7f7f7;
+  --sombra: 0 5px 7px rgb(212, 176, 153);
+}
+
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: black;
-    position: relative;
+  font-family: Arial, sans-serif;
+  color: black;
+  position: relative;
+  min-height: 100vh;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #a3633a;
-    padding: 10px;
-    max-height: 70px;
-    position: relative;
-    z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cafe-oscuro);
+  padding: 10px 5%;
+  position: relative;
+  z-index: 10;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo h1 {
-    margin: 7px 0 0 30px;
-    color: #ece5e5;
-    font-size: 40px;
+/* Logo container */
+.logo-img {
+  flex-shrink: 0;
 }
 
 .logo-img img {
-    width: 100px;
-    height: 70px;
+  width: clamp(50px, 7vw, 80px);
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  color: var(--texto-claro);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: bold;
+  white-space: nowrap;
+  flex-grow: 1;
+}
+
+/* Nav */
+nav {
+  order: 3;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding-left: 40px;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
-    font-size: 1.5rem;
+  list-style: none;
+  display: flex;
+  gap: clamp(10px, 2vw, 20px);
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #f7f7f7;
-    padding: 15px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: var(--texto-claro);
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #843e15;
-    box-shadow: 0 5px 7px rgb(212, 176, 153);
+  background-color: var(--cafe-claro);
+  box-shadow: var(--sombra);
 }
 
-nav ul li a:active {
-    background-color: #b78c8c;
-}
-
+/* Search */
 .search {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  order: 4;
+  flex-shrink: 0;
 }
 
 .search input {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+  width: clamp(120px, 15vw, 180px);
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 .search-button {
-    background-color: #a3633a;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-left: 25px;
-    font-size: 16px;
-    padding: 10px;
+  background-color: var(--cafe-oscuro);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-    background-color: #843e15;
-    box-shadow: 0 5px 7px rgb(212, 176, 153);
+  background-color: var(--cafe-claro);
+  box-shadow: var(--sombra);
 }
 
+
 .container-main {
-    display: grid;
-    gap: 8px;
-    grid-template-columns: 1fr 3fr;
-    margin: 20px auto;
-    max-width: 1500px;
-    padding: 10px auto;
-    width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
 .banner {
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    object-fit: cover;
-    z-index: 1;
-    padding-left: 100px;
-}
-
-.banner .vid-der {
-    background-size: cover;
-    border: 2px solid #000;
-    border-radius: 40px;
-    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.877);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    object-fit: cover;
+  text-align: center;
+  padding: 20px 0;
 }
 
 .banner h3 {
-    font-size: 25px;
-    margin: 5px;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: 15px;
+}
+
+.banner .vid-der {
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #000;
+  border-radius: 40px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.877);
+  margin: 0 auto;
 }
 
 .banner .boton {
-    background: #a3633a;
-    border: 3px solid #000;
-    border-radius: 100px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s;
-    margin: 15px 0;
-    width: 100%;
+  background: var(--cafe-oscuro);
+  border: 3px solid #000;
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: bold;
+  padding: 12px 25px;
+  margin: 15px 0;
+  text-decoration: none;
+  transition: transform 0.3s;
+  display: inline-block;
 }
 
 .banner .boton:hover {
-    transform: scale(1.03);
-    background-color: #843e15;
-    color: white;
+  transform: scale(1.03);
+  background-color: var(--cafe-claro);
+  color: #ffdbac;
 }
 
-.banner .boton a {
-    text-decoration: none;
-    color: #fff;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-.banner .boton:hover a {
-    color: #ffdbac;
-}
-
-.container-cards {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
-}
 
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 20px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
 }
 
 .card {
-    width: 200px;
-    height: 250px;
-    perspective: 1500px;
-    position: relative;
-}
-
-.card:hover .adelante {
-    transform: rotateY(180deg);
-}
-
-.card:hover .atras {
-    transform: rotateY(0deg);
+  width: 100%;
+  height: 300px;
+  perspective: 1500px;
+  position: relative;
 }
 
 .adelante,
 .atras {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.877);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.6s;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.877);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s;
+  overflow: hidden;
 }
 
 .adelante {
-    background-color: #fff;
-    transform: rotateY(0deg);
+  background-color: #fff;
+  transform: rotateY(0deg);
 }
 
 .adelante img {
-    width: 100%;
-    height: 90%;
-    object-fit: cover;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
 }
 
 .adelante h3 {
-    margin: 20px;
-    font-size: 1.2em;
-    color: #333;
-    text-align: center;
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
 }
 
 .atras {
-    background-color: #d28a16b6;
-    color: white;
-    transform: rotateY(180deg);
-    text-align: start;
-    padding: 5px;
-    font-size: medium;
+  background-color: #d28a16b6;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
 }
 
+.card:hover .adelante {
+  transform: rotateY(180deg);
+}
+
+.card:hover .atras {
+  transform: rotateY(0deg);
+}
+.hacer_pedido {
+  position: fixed;          
+  bottom: 20px;           
+  right: 20px;         
+  background-color: #8B4513; 
+  color: white;              
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.hacer_pedido:hover {
+  background-color: #A0522D; 
+}
+
+
 .fondo-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8d3d3;
-    position: relative;
-    bottom: 0;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8d3d3;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    padding: 10px 4%;
+  }
+
+  .logo-img img {
+    width: clamp(50px, 8vw, 70px);
+  }
+
+  .logo {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-left: 10px;
+    flex-grow: 1;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    gap: clamp(10px, 4vw, 15px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li a {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: 6px 10px;
+  }
+
+  .search {
+    order: 2;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .search input {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .hacer_pedido {
+    font-size: 14px;
+    padding: 10px 16px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 8px 3%;
+  }
+
+  .logo-img img {
+    width: clamp(40px, 10vw, 60px);
+  }
+
+  .logo {
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    margin-left: 8px;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  nav ul {
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav ul li a {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    padding: 5px 8px;
+  }
+
+  .search {
+    order: 2;
+    width: 100%;
+    margin-top: 8px;
+    justify-content: center;
+  }
+
+  .search input {
+    width: 90%;
+    max-width: 200px;
+  }
+
+  .card {
+    height: 200px;
+  }
+
+  .atras {
+    font-size: 0.75rem;
+    padding: 8px;
+  }
+
+  .adelante h3 {
+    font-size: 0.9rem;
+  }
+
+  .hacer_pedido {
+    font-size: 12px;
+    padding: 8px 14px;
+    bottom: 10px;
+    right: 10px;
+  }
 }

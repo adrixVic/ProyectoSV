@@ -6,19 +6,18 @@
 
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
     color: black;
     position: relative;
 }
 
-
 header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #a3633a;
-    padding: 10px;
+    padding: 10px 20px;
     max-height: 70px;
     position: relative;
     z-index: 1;
@@ -27,10 +26,11 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    flex: 1 1 auto;
 }
 
 .logo h1 {
-    margin: 7px 0 0 30px;
+    margin-left: 30px;
     color: #ece5e5;
     font-size: 40px;
 }
@@ -38,18 +38,24 @@ header {
 .logo-img img {
     width: 100px;
     height: 70px;
+    object-fit: cover;
+}
+
+nav {
+    flex: 2 1 auto;
+    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
-    padding-left: 40px;
     display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 nav ul li a {
@@ -69,25 +75,31 @@ nav ul li a:active {
     background-color: #b78c8c;
 }
 
+
 .search {
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .search input {
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
+    font-size: 1rem;
+    max-width: 150px;
 }
 
 .search-button {
     background-color: #a3633a;
     border: none;
     cursor: pointer;
-    margin-left: 5px;
     font-size: 16px;
     border-radius: 50px;
     padding: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
@@ -109,6 +121,7 @@ nav ul li a:active {
     color: black;
 }
 
+
 .evento {
     background-color: #f9ca94;
     border: 1px solid #050404;
@@ -116,7 +129,7 @@ nav ul li a:active {
     margin: 30px 0;
     padding: 20px;
     box-shadow: 0 8px 8px rgb(0, 0, 0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .evento:hover {
@@ -136,7 +149,7 @@ nav ul li a:active {
 
 .evento-fecha,
 .evento-hora {
-    font-size: 26px;
+    font-size: 1.2rem;
     color: #0e0b0b;
     margin-bottom: 8px;
 }
@@ -146,8 +159,9 @@ nav ul li a:active {
     color: black;
 }
 
+
 .fondo-video {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -157,10 +171,90 @@ nav ul li a:active {
     opacity: 0.7;
 }
 
+
 footer {
     text-align: center;
     padding: 20px;
     background-color: #f8d3d3;
     position: relative;
     bottom: 0;
+    font-size: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        max-height: none;
+        padding: 10px;
+    }
+
+    .logo {
+        flex: 1 1 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .logo h1 {
+        font-size: 32px;
+        margin-left: 0;
+    }
+
+    nav {
+        flex: 1 1 100%;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        font-size: 1.4rem;
+    }
+
+    .search {
+        flex: 1 1 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .search input {
+        max-width: 100%;
+    }
+
+    .evento-fecha,
+    .evento-hora {
+        font-size: 1rem;
+    }
+
+    .evento h3 {
+        font-size: 1.4rem;
+    }
+
+    .evento-descripcion {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 400px) {
+    header {
+        padding: 5px;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    nav ul li {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+
+    .search-button {
+        padding: 8px;
+        font-size: 14px;
+    }
 }
